@@ -133,7 +133,7 @@ def find_wk_params(tsfc=293., psfc=97000., sbcape=1000., sblcl=500., ztrop=12000
         x_tsfc, x_psfc, x_sbcape, x_sblcl = compute_opt_params(np.append(x, ztrop))
         return norm([tsfc - x_tsfc, psfc - x_psfc, sbcape - x_sbcape, sblcl - x_sblcl], ord=2)
 
-    initial_guess = np.array([343., 213., 300., 0.014])
+    initial_guess = np.array([333., 203., 300., 0.015])
     ret = minimize(do_optimize, initial_guess, args=(ztrop,),
                    method='Nelder-Mead', options={'adaptive': True})
 
